@@ -1,7 +1,7 @@
 #include <chrono>
 #include <iostream>
 #include <iterator>
-#include <optional>
+#include <experimental/optional>
 #include <random>
 #include <string>
 #include <thread>
@@ -72,7 +72,7 @@ int main(int argc, char *argv[]) {
     std::cout << "Test for running with timeout" << std::endl;
 
     // should be too slow
-    std::optional<int> result = RunWithTimeout<int, int>([](int a) {std::this_thread::sleep_for(std::chrono::milliseconds(200)); return 2 * a;}, 5, 100);
+    std::experimental::optional<int> result = RunWithTimeout<int, int>([](int a) {std::this_thread::sleep_for(std::chrono::milliseconds(200)); return 2 * a;}, 5, 100);
     if (result.has_value()) {
         std::cout << "On time! The result is " << result.value() << std::endl;
     } else {

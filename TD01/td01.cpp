@@ -1,7 +1,7 @@
 #include <thread>
 #include <numeric>
 #include <iterator>
-#include <optional>
+#include <experimental/optional>
 #include <vector>
 
 typedef long double Num;
@@ -30,6 +30,6 @@ bool FindParallel(Iter begin, Iter end, T target, size_t num_threads) {}
 //-----------------------------------------------------------------------------
 
 template <typename ArgType, typename ReturnType>
-std::optional<ReturnType> RunWithTimeout(ReturnType f(ArgType), ArgType arg, size_t timeout) {}
+std::experimental::optional<ReturnType> RunWithTimeout(ReturnType f(ArgType), ArgType arg, size_t timeout) {}
 
 //-----------------------------------------------------------------------------
